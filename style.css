@@ -1,0 +1,129 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Arial, sans-serif;
+  background:#f5f6f8;
+  color:#111;
+  transition:.25s;
+}
+
+body.dark{
+  background:#0c0c0f;
+  color:#eee;
+}
+
+/* HEADER */
+header{
+  padding:32px 16px;
+  text-align:center;
+}
+header h1{
+  font-size:1.8rem;
+  margin-bottom:8px;
+}
+header p{
+  opacity:0.8;
+}
+.pfp{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:12px;
+}
+
+/* TEMA */
+.theme-btn{
+  position:absolute;
+  right:16px;
+  top:16px;
+  background:#fff;
+  border:0;
+  padding:8px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:20px;
+}
+body.dark .theme-btn{
+  background:#222;
+}
+
+/* GRID */
+.thumb-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:14px;
+  padding:0 16px;
+}
+.thumb{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  transition:.25s;
+}
+.thumb:hover{
+  transform:scale(1.04);
+}
+
+/* DISCORD */
+.discord{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-left:16px;
+  color:inherit;
+  text-decoration:none;
+  font-weight:bold;
+}
+.discord-logo{
+  width:32px;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  padding:10px;
+}
+.modal img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+}
+
+/* PLAYER */
+.player{
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:16px;
+  background:#fff;
+  padding:10px 16px;
+  border-radius:40px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+body.dark .player{
+  background:#1b1b1f;
+}
+.player button{
+  background:none;
+  border:0;
+  font-size:18px;
+  cursor:pointer;
+  color:inherit;
+}
+#track-name{
+  font-weight:bold;
+  max-width:220px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
