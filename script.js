@@ -19,9 +19,28 @@ window.onload = () => {
   updateThemeIcon();
 };
 
+/* ---------- MODAL DE IMAGEM ---------- */
+const modal = document.createElement("div");
+modal.id = "modal";
+modal.style.cssText = `
+  position:fixed; inset:0; background:rgba(0,0,0,.8);
+  display:none; justify-content:center; align-items:center; z-index:1000;
+`;
+const modalImg = document.createElement("img");
+modalImg.style.cssText = "max-width:90%; max-height:90%; border-radius:12px;";
+modal.appendChild(modalImg);
+document.body.appendChild(modal);
 
-/* ---------- PLAYER (FUNCIONA EM QUALQUER HOST) ---------- */
+modal.onclick = () => modal.style.display = "none";
 
+document.querySelectorAll(".thumb").forEach(t => {
+  t.onclick = () => {
+    modalImg.src = t.src;
+    modal.style.display = "flex";
+  };
+});
+
+/* ---------- PLAYER ---------- */
 const trackName = document.getElementById("track-name");
 const playBtn   = document.getElementById("playpause");
 const nextBtn   = document.getElementById("next");
@@ -34,15 +53,15 @@ const player = {
     "Sons/Musicas/Toby Fox - Fallen-Down (Undertale).mp3"
   ],
   index: 0,
-  audio: new Audio()
+  audio: new Audio(),
+  volume: 0.5
 };
+
+player.audio.volume = player.volume;
 
 // Limpar o nome bonito
 function cleanName(path) {
-  return path
-    .split("/").pop()
-    .replace(".mp3", "")
-    .replace(/%20/g, " ");
+  return path.split("/").pop().replace(".mp3", "").replace(/%20/g, " ");
 }
 
 function loadTrack(i){
@@ -55,8 +74,7 @@ playBtn.onclick = () => {
   if (player.audio.paused){ 
     player.audio.play(); 
     playBtn.textContent="⏸"; 
-  }
-  else{ 
+  } else { 
     player.audio.pause(); 
     playBtn.textContent="▶"; 
   }
@@ -74,6 +92,20 @@ prevBtn.onclick = () => {
   loadTrack(player.index);
   player.audio.play();
   playBtn.textContent="⏸";
+};
+
+/* ---------- VOLUME ---------- */
+const volumeSlider = document.createElement("input");
+volumeSlider.type = "range";
+volumeSlider.min = 0;
+volumeSlider.max = 1;
+volumeSlider.step = 0.01;
+volumeSlider.value = player.volume;
+volumeSlider.style.cssText = "width:100px; cursor:pointer;";
+document.getElementById("player").appendChild(volumeSlider);
+
+volumeSlider.oninput = () => {
+  player.audio.volume = volumeSlider.value;
 };
 
 loadTrack(0);

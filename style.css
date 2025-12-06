@@ -47,11 +47,11 @@ body.dark .theme-btn{
   background:#222;
 }
 
-/* GRID */
+/* GRID responsivo */
 .thumb-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:10px;
   padding:0 16px;
 }
 .thumb{
@@ -81,16 +81,16 @@ body.dark .theme-btn{
 }
 
 /* MODAL */
-.modal{
+#modal{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.7);
+  background:rgba(0,0,0,.8);
   display:none;
   justify-content:center;
   align-items:center;
-  padding:10px;
+  z-index:1000;
 }
-.modal img{
+#modal img{
   max-width:90%;
   max-height:90%;
   border-radius:12px;
@@ -126,4 +126,29 @@ body.dark .player{
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
+}
+
+/* VOLUME */
+.player input[type=range]{
+  width:100px;
+  cursor:pointer;
+}
+
+/* RESPONSIVO */
+@media (max-width:600px){
+  .thumb{
+    height:100px;
+  }
+  .player{
+    flex-direction:column;
+    gap:5px;
+    padding:8px 12px;
+  }
+  #track-name{
+    max-width:180px;
+    font-size:14px;
+  }
+  .theme-btn img{
+    width:25px !important;
+  }
 }
