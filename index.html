@@ -10,39 +10,115 @@
 <body class="light">
 
 <header>
-  <h1>Murilo</h1>
-  <img src="Images/PFP.jpg" class="pfp" alt="Foto de perfil">
-  <p>Thumbmaker • Editor de vídeos • Dev Roblox • Compositor</p>
-
+  <div class="profile-container">
+    <img src="Images/PFP.jpg" class="pfp" alt="Foto de perfil">
+    <h1>Murilo Araújo</h1>
+    <div class="thumb-trail-wrapper">
+      Thumbmaker • Editor de vídeos • Dev Roblox • Compositor
+    </div>
+  </div>
   <button id="theme-toggle" class="theme-btn">🌙</button>
 </header>
 
 <main>
-
+  <!-- THUMBNAILS -->
   <section>
-    <h2>Thumbnails</h2>
-    <div class="thumb-grid">
-      <img class="thumb" src="Images/Thumb1.png">
-      <img class="thumb" src="Images/Thumb2.png">
-      <img class="thumb" src="Images/Thumb3.png">
-      <img class="thumb" src="Images/Thumb4.png">
-      <img class="thumb" src="Images/Thumb5.jpg">
-      <img class="thumb" src="Images/Thumb6.png">
-      <img class="thumb" src="Images/Thumb7.png">
-      <img class="thumb" src="Images/Thumb8.png">
-      <img class="thumb" src="Images/Thumb9.png">
-      <img class="thumb" src="Images/Thumb10.png">
+    <button class="thumb-toggle">Thumbnails ▼</button>
+    <div class="thumb-grid-wrapper">
+      <div class="thumb-grid">
+        <!-- Repare que cada thumb tem overlay -->
+        <div class="thumb-item">
+          <div class="thumb-container">
+            <img class="thumb" src="Images/Thumb1.png">
+            <div class="thumb-overlay">Clique para visualizar</div>
+          </div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb-container">
+            <img class="thumb" src="Images/Thumb2.png">
+            <div class="thumb-overlay">Clique para visualizar</div>
+          </div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb-container">
+            <img class="thumb" src="Images/Thumb3.png">
+            <div class="thumb-overlay">Clique para visualizar</div>
+          </div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb-container">
+            <img class="thumb" src="Images/Thumb4.png">
+            <div class="thumb-overlay">Clique para visualizar</div>
+          </div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb-container">
+            <img class="thumb" src="Images/Thumb5.png">
+            <div class="thumb-overlay">Clique para visualizar</div>
+          </div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb-container">
+            <img class="thumb" src="Images/Thumb6.png">
+            <div class="thumb-overlay">Clique para visualizar</div>
+          </div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb-container">
+            <img class="thumb" src="Images/Thumb7.png">
+            <div class="thumb-overlay">Clique para visualizar</div>
+          </div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb-container">
+            <img class="thumb" src="Images/Thumb8.png">
+            <div class="thumb-overlay">Clique para visualizar</div>
+          </div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb-container">
+            <img class="thumb" src="Images/Thumb9.png">
+            <div class="thumb-overlay">Clique para visualizar</div>
+          </div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb-container">
+            <img class="thumb" src="Images/Thumb10.png">
+            <div class="thumb-overlay">Clique para visualizar</div>
+          </div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb-container">
+            <img class="thumb" src="Images/Thumb11.png">
+            <div class="thumb-overlay">Clique para visualizar</div>
+          </div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb-container">
+            <img class="thumb" src="Images/Thumb12.png">
+            <div class="thumb-overlay">Clique para visualizar</div>
+          </div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb-container">
+            <img class="thumb" src="Images/Thumb13.png">
+            <div class="thumb-overlay">Clique para visualizar</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- CONTATO -->
   <section>
     <h2>Contato</h2>
-    <a class="discord" href="https://discord.com/users/1035635727112880169" target="_blank">
-      <img src="Images/Discord_Logo.png" class="discord-logo">
-      _mrlzzz
-    </a>
+    <div class="discord-wrapper">
+      <a class="discord" href="https://discord.com/users/1035635727112880169" target="_blank">
+        <img src="Images/Discord_Logo.png" class="discord-logo">
+        _mrlzzz
+      </a>
+    </div>
   </section>
-
 </main>
 
 <footer>
@@ -52,7 +128,7 @@
 <!-- Player -->
 <div id="player" class="player">
   <button id="prev">⏮</button>
-  <button id="playpause">▶</button>
+  <button id="playpause">⏸</button>
   <button id="next">⏭</button>
   <span id="track-name">Nenhuma música</span>
 </div>
